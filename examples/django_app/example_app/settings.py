@@ -34,7 +34,14 @@ INSTALLED_APPS = (
 
 CHATTERBOT = {
     'name': 'Django ChatterBot Example',
-    'django_app_name': 'django_chatterbot'
+    'django_app_name': 'django_chatterbot',
+    'logic_adapters': [
+        'chatterbot.logic.BestMatch'
+    ],
+    'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
+    'training_data': [
+        "chatterbot.corpus"
+    ]
 }
 
 MIDDLEWARE_CLASSES = (
